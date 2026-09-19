@@ -1,0 +1,4 @@
+# Theme fixe en clair : la palette des graphiques est validee pour un fond clair
+# (contraste et lisibilite pour les daltonismes verifies sur ce fond).
+[theme]
+base = "light"

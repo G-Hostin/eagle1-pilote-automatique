@@ -1,0 +1,35 @@
+[project]
+name = "p11-agent-rl"
+version = "0.1.0"
+description = "P11 - Entrainer votre agent RL (OpenClassrooms AI Engineer)"
+requires-python = ">=3.12,<3.15"
+dependencies = [
+    # RL
+    "gymnasium[box2d,classic-control,toy-text]>=1.0",
+    "stable-baselines3>=2.4",
+    "torch>=2.8",
+    # Data / calcul
+    "numpy>=2.0",
+    # Visualisation
+    "matplotlib>=3.9",
+    # Notebooks
+    "jupyterlab>=4.3",
+    "ipykernel>=6.29",
+    "ipywidgets>=8.1",
+    "tensorboard>=2.21.0",
+    "moviepy>=2.2.1",
+    "fastapi>=0.141.1",
+    "uvicorn[standard]>=0.53.0",
+    "streamlit>=1.64.0",
+    "pandas>=3.0.6",
+]
+
+# torch en CPU : les environnements du projet (CartPole, FrozenLake) sont minuscules,
+# le GPU n'apporte rien et evite un telechargement CUDA de plusieurs Go.
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
